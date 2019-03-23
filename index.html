@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-4 offset-md-4 bg-primary mt-4 pt-4 pb-4">
+                <h4 class="text-white">Calculator</h4>
+                <input id="monitor" type="text" readonly class="form-control mb-2 text-right" value=0>
+                <div class="row mb-2 mt-4">
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="7" class="btn btn-white btn-block">7</button>
+                    </div>
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="8" class="btn btn-white btn-block">8</button>
+                    </div>
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="9" class="btn btn-white btn-block">9</button>
+                    </div>
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="+" class="btn btn-white btn-block font-weight-bold">+</button>
+                    </div>
+                </div>
+
+                <div class="row mb-2 mt-4">
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="4" class="btn btn-white btn-block">4</button>
+                    </div>
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="5" class="btn btn-white btn-block">5</button>
+                    </div>
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="6" class="btn btn-white btn-block">6</button>
+                    </div>
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="-" class="btn btn-white btn-block font-weight-bold">-</button>
+                    </div>
+                </div>
+
+                <div class="row mb-2 mt-4">
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="1" class="btn btn-white btn-block">1</button>
+                    </div>
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="2" class="btn btn-white btn-block">2</button>
+                    </div>
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="3" class="btn btn-white btn-block">3</button>
+                    </div>
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="*" class="btn btn-white btn-block font-weight-bold">X</button>
+                    </div>
+                </div>
+                <div class="row mb-2 mt-4">
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="c"
+                            class="btn btn-white btn-block text-danger font-weight-bold">C</button>
+                    </div>
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="0" class="btn btn-white btn-block">0</button>
+                    </div>
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="="
+                            class="btn btn- btn-danger btn-block font-weight-bold text-white">=</button>
+                    </div>
+                    <div class="col">
+                        <button onclick="clickFunction(this.id)" id="/" class="btn btn-white btn-block font-weight-bold">/</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function clickFunction(clicked_id) {
+            var monitor = document.getElementById("monitor").value;
+            if( clicked_id == "="){
+                var calculate = eval(monitor);
+                document.getElementById("monitor").value = calculate;
+            }else if( clicked_id == "c") {
+                document.getElementById("monitor").value = "0";
+            }else{
+                if( monitor == 0) {
+                document.getElementById("monitor").value = clicked_id;
+                }else{
+                document.getElementById("monitor").value = monitor+clicked_id;
+                }
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
